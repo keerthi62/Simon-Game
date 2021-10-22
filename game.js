@@ -44,26 +44,6 @@ function wrong(){
 }
 
 
-$('#green, #red, #yellow, #blue').click(function(){
-    var color = this.id;
-    $('#' + color).addClass('pressed');
-    setTimeout(function() {$('#' + color).removeClass('pressed')}, 100);
-    $("#" + color + "sound")[0].play();
-    var s;
-    if (color === "green") { s = 1;}
-    else if (color === "red") { s = 2;}
-    else if (color === "yellow") { s = 3;}
-    else { s = 4;}
-    if(sequence.length == 0){
-		wrong();
-	}
-    else{
-        play(s);
-    }
-    
-})
-
-
 function blink(color){
     $("#"+ color + "sound")[0].play();
     $("#" + color).fadeIn(100).fadeOut(100).fadeIn(100);
